@@ -1,0 +1,18 @@
+{
+    "cognitive_atlas_task_id": "tsk_4a57abb949dc8",
+    "instructions":"Respond to the stimuli on the screen.",
+    "description":"The reaction time task in Jspsych, as an example",
+    "url":"https://www.github.com/openbases/experiment_jspsych",
+    "contributors": [
+        "Vanessa Sochat",
+        "Josh de Leeuw",
+        "Felix Henninger",
+        "Arfon Smith",
+        "Tyler Burleigh"
+    ],
+    "exp_id": "experiment_jspsych",
+    "name": "Simple Reaction Time Example with JSpsych",
+    "reference": ["http://www.sciencedirect.com/science/article/pii/0001691869900651"],
+    "template": "jspsych",
+    "time": 8
+}

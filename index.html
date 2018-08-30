@@ -1,0 +1,76 @@
+<!DOCTYPE html><html class=''>
+<head>
+    <meta charset='UTF-8'>
+    <meta name="robots" content="noindex">
+    <title>The Experiment Factory simple-reaction-time</title>
+
+    <!-- We use jquery but could also use Vanilla Javascript-->
+    <script src='assets/js/jquery.min.js'></script>
+
+    <!-- Note we are using version jspsych-6.0.4-->
+    <script src="assets/js/jspsych.js"></script>
+    <script src="assets/js/plugins/jspsych-html-keyboard-response.js"></script>
+    <script src="assets/js/plugins/jspsych-image-keyboard-response.js"></script>
+
+    <!-- This is where our timeline is defined!-->
+    <script src='experiment.js'></script>
+
+    <!-- Here is the experiment styling -->
+    <link href="assets/css/jspsych.css" rel="stylesheet" type="text/css"></link>    
+</head>
+
+<body></body>
+
+<script>
+$( document ).ready(function() {
+
+    jsPsych.init({
+
+             timeline: timeline,
+             fullscreen: true,
+             on_trial_finish: function(data){
+
+               //TODO: need to add back in function to add identifier
+               console.log('This happens at the end!')
+
+             },
+
+             on_finish: function(data){
+
+                 // Serialize the data
+                 var promise = new Promise(function(resolve, reject) {
+                     var data = jsPsych.data.dataAsJSON();
+                     resolve(data);
+                 })
+
+                 promise.then(function(data) {
+
+
+                     $.ajax({
+                         type: "POST",
+                         url: '/save',
+                         data: { "data": data },
+                         success: function(){ document.location = "/next" },
+                         dataType: "application/json",
+
+                         //TODO: is this still the best/recommended way to do this?
+                         // Endpoint not running, local save
+                         error: function(err) {
+
+                             if (err.status == 200){
+                                 document.location = "/next";
+
+                             } else {
+                                 // If error, assue local save
+                                 jsPsych.data.displayData();
+                                 jsPsych.data.localSave('jspsych_experiment_results.csv', 'csv');
+                             }
+                         }
+                     });
+                 })
+             }
+
+      });
+});
+</script>
+</html>
