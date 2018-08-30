@@ -22,9 +22,9 @@
           "<p>If the circle is <strong>orange</strong>, press the letter J " +
           "as fast as you can.</p>" +
           "<div style='width: 700px;'>"+
-          "<div style='float: left;'><img src='img/blue.png'></img>" +
+          "<div style='float: left;'><img src='assets/img/blue.png'></img>" +
           "<p class='small'><strong>Press the F key</strong></p></div>" +
-          "<div class='float: right;'><img src='img/orange.png'></img>" +
+          "<div class='float: right;'><img src='assets/img/orange.png'></img>" +
           "<p class='small'><strong>Press the J key</strong></p></div>" +
           "</div>"+
           "<p>Press any key to begin.</p>",
@@ -35,8 +35,8 @@
     /* test trials */
 
     var test_stimuli = [
-      { stimulus: "img/blue.png", data: { test_part: 'test', correct_response: 'f' } },
-      { stimulus: "img/orange.png", data: { test_part: 'test', correct_response: 'j' } }
+      { stimulus: "assets/img/blue.png", data: { test_part: 'test', correct_response: 'f' } },
+      { stimulus: "assets/img/orange.png", data: { test_part: 'test', correct_response: 'j' } }
     ];
 
     var fixation = {
