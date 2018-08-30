@@ -10,7 +10,7 @@ Hi Friend! This is a [jspsych base](https://jspsych.org) for an Experiment that 
 
 ## How was it changed?
 
-There were very minimal changes to the [tutorial provided]() and we will discuss
+There were very minimal changes to the [tutorial provided](https://www.jspsych.org/tutorials/rt-task/) and we will discuss
 them here so you know you you can prepare any experiment for this template!
 
 ### 1. The organization of css and js files is different.
@@ -65,3 +65,18 @@ Factory [documentation](https://expfactory.github.io/contribute) for how to defi
     "time": 8
 }
 ```
+
+## How was it deployed for preview?
+
+Once on github, we deploy the master branch to 
+[Github pages](https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/) so that the experiment
+renders (for preview) at [https://openbaes.github.io/experiment_jspsych](https://openbaes.github.io/experiment_jspsych)
+
+## How would I customize this task?
+
+ 1. Write your experiment timeline in [experiment.js](experiment.js)
+ 2. Make sure all javascript and style dependencies are in [assets](assets)
+ 3. Add dependencies as `script` and `link` tags in the `<head>` of [index.html](index.html)
+
+And you should use the [JsPsych docs](https://www.jspsych.org/core_library/jspsych-core/) as a resource to understand the plugins and
+functions available to you!
