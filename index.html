@@ -37,15 +37,6 @@ $( document ).ready(function() {
 
              on_finish: function(data){
 
-                 // Serialize the data
-                 var promise = new Promise(function(resolve, reject) {
-                     var data = jsPsych.data.dataAsJSON();
-                     resolve(data);
-                 })
-
-                 promise.then(function(data) {
-
-
                      $.ajax({
                          type: "POST",
                          url: '/save',
@@ -57,17 +48,10 @@ $( document ).ready(function() {
                          // Endpoint not running, local save
                          error: function(err) {
 
-                             if (err.status == 200){
-                                 document.location = "/next";
-
-                             } else {
-                                 // If error, assue local save
-                                 jsPsych.data.displayData();
-                                 jsPsych.data.localSave('jspsych_experiment_results.csv', 'csv');
-                             }
+                             if (err.status == 200){ document.location = "/next"
+                             } else { jsPsych.data.displayData() }
                          }
                      });
-                 })
              }
 
       });
