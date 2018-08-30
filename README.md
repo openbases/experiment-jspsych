@@ -72,6 +72,15 @@ Once on github, we deploy the master branch to
 [Github pages](https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/) so that the experiment
 renders (for preview) at [https://openbaes.github.io/experiment_jspsych](https://openbaes.github.io/experiment_jspsych)
 
+Locally, you can start a local web server in the present working directory and open your
+browser to the port to preview! E.g., here is how to do it with Python 3 on port 9999:
+
+```
+python -m http.server 9999
+```
+
+Then open to [http://127.0.0.1:9999](http://127.0.0.1:9999)
+
 ## How would I customize this task?
 
  1. Write your experiment timeline in [experiment.js](experiment.js)
